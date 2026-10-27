@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-27T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="lab1-use-case-group21" name="实验一完整用例图">
+    <mxGraphModel dx="1280" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="830" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="heading" value="软件工程导论 · 实验一 / UML 用例图（软件243 · 第21组）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=23;fontStyle=1;fontColor=#20304B;" parent="1" vertex="1">
+          <mxGeometry x="82" y="42" width="1080" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="system" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#435570;strokeWidth=2;fillColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="273" y="139" width="742" height="594" as="geometry" />
+        </mxCell>
+        <mxCell id="system_label" value="校园二手书交易平台" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=21;fontStyle=1;fontColor=#263953;" parent="1" vertex="1">
+          <mxGeometry x="493" y="156" width="302" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="seller" value="卖家" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;strokeColor=#31425C;fillColor=#FFFFFF;strokeWidth=2;fontColor=#20304B;fontFamily=Microsoft YaHei;fontSize=18;spacingTop=7;" parent="1" vertex="1">
+          <mxGeometry x="111" y="381" width="74" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="buyer" value="买家" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;strokeColor=#31425C;fillColor=#FFFFFF;strokeWidth=2;fontColor=#20304B;fontFamily=Microsoft YaHei;fontSize=18;spacingTop=7;" parent="1" vertex="1">
+          <mxGeometry x="1117" y="381" width="74" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="uc01" value="UC-01&lt;br&gt;发布书籍" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#41648B;fillColor=#F3F8FF;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#20304B;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="375" y="397" width="192" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="uc02" value="UC-02&lt;br&gt;检索书籍" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#41648B;fillColor=#F3F8FF;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#20304B;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="677" y="216" width="226" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="uc03" value="UC-03&lt;br&gt;查看书籍" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#41648B;fillColor=#F3F8FF;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#20304B;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="677" y="322" width="226" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="uc04" value="UC-04&lt;br&gt;下单" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#41648B;fillColor=#F3F8FF;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#20304B;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="677" y="428" width="226" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="uc05" value="UC-05&lt;br&gt;取消订单" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#41648B;fillColor=#F3F8FF;strokeWidth=2;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#20304B;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="677" y="534" width="226" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="e_seller" value="" style="html=1;rounded=0;edgeStyle=none;startArrow=none;endArrow=none;strokeColor=#52637C;strokeWidth=2;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1" source="seller" target="uc01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_uc02" value="" style="html=1;rounded=0;edgeStyle=none;startArrow=none;endArrow=none;strokeColor=#52637C;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.41;entryDx=0;entryDy=0;" parent="1" edge="1" source="uc02" target="buyer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_uc03" value="" style="html=1;rounded=0;edgeStyle=none;startArrow=none;endArrow=none;strokeColor=#52637C;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.48;entryDx=0;entryDy=0;" parent="1" edge="1" source="uc03" target="buyer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_uc04" value="" style="html=1;rounded=0;edgeStyle=none;startArrow=none;endArrow=none;strokeColor=#52637C;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.55;entryDx=0;entryDy=0;" parent="1" edge="1" source="uc04" target="buyer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_uc05" value="" style="html=1;rounded=0;edgeStyle=none;startArrow=none;endArrow=none;strokeColor=#52637C;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.62;entryDx=0;entryDy=0;" parent="1" edge="1" source="uc05" target="buyer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="footnote" value="注：买家、卖家表示业务角色；同一预置测试账号可以同时承担两种角色。" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#5A687B;" parent="1" vertex="1">
+          <mxGeometry x="240" y="763" width="805" height="27" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
