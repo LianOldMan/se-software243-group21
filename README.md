@@ -16,8 +16,8 @@
 | 成员 | 账号（以实际 GitHub 协作者列表为准） | 实验一主责 | Issues |
 |---|---|---|---|
 | A（组长） | `LianOldMan` | 发布书籍（UC-01）、系统概述、版本整合 | [#1](https://github.com/LianOldMan/se-software243-group21/issues/1)、[#6](https://github.com/LianOldMan/se-software243-group21/issues/6) |
-| B | **待本人确认并填写** | 检索与查看（UC-02/03）、下单（UC-04） | [#2](https://github.com/LianOldMan/se-software243-group21/issues/2)、[#3](https://github.com/LianOldMan/se-software243-group21/issues/3) |
-| C | **待本人确认并填写** | 取消订单（UC-05）、NFR/待确认规则 | [#4](https://github.com/LianOldMan/se-software243-group21/issues/4)、[#5](https://github.com/LianOldMan/se-software243-group21/issues/5) |
+| B | 3366731 | 检索与查看（UC-02/03）、下单（UC-04） | [#2](https://github.com/LianOldMan/se-software243-group21/issues/2)、[#3](https://github.com/LianOldMan/se-software243-group21/issues/3) |
+| C | Elyele1111 | 取消订单（UC-05）、NFR/待确认规则 | [#4](https://github.com/LianOldMan/se-software243-group21/issues/4)、[#5](https://github.com/LianOldMan/se-software243-group21/issues/5) |
 
 小组 Projects 看板：[软件243班第21组](https://github.com/users/LianOldMan/projects/1)
 
