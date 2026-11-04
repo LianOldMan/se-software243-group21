@@ -33,6 +33,7 @@
 | [requirements/UC-01发布书籍详细用例初稿.md](requirements/UC-01发布书籍详细用例初稿.md) | A 的个人详细用例 v0.2（C 已在 #1 二次复核通过） |
 | [records/实验一_需求审查与规则确认_待填写.md](records/实验一_需求审查与规则确认_待填写.md) | 实际组内检查、规则讨论、互评和贡献记录 |
 | [records/issue-6-integration-review.md](records/issue-6-integration-review.md) | #6 七项检查、真实成员证据及 AI 辅助检查边界 |
+| [records/实验一_跨组互评准备单_v0.1.md](records/实验一_跨组互评准备单_v0.1.md) | 供真正的其他小组开展正式互评的阅读入口、四类检查点与空白意见处理表；不是已发生互评的结论 |
 
 `database/`、`design/` 为后续实验计划目录，当前 main 尚无对应成果。
 
@@ -41,6 +42,7 @@
 - 实验一第 1 次课：仓库与看板、Issue、需求初稿和完整用例图已建立；实际完成的步骤以 GitHub 历史记录为准。
 - 实验一第 2 次课：共享需求已修订至 **v0.5.5**，保持 8 FR、5 UC、3 NFR，完整用例图继续使用 v0.1 drawio/PNG。B/C 已分别对上一版 v0.5.4 在 #6 完成真实组内复核；本版根据 B 在 #6 的四项后续意见修改 AC-05-4、FR-04、NFR-02 追踪和 #2 来源链接，**尚待 B/C 核对 v0.5.5 变更差异**。正式跨组互评、个人 Word 报告及最终 lab1 提交仍未完成。
 - #1～#6 GitHub Issues 均已 Closed，表示对应组内任务已结项。#2 的 C 复核证据见 [真实评论](https://github.com/LianOldMan/se-software243-group21/issues/2#issuecomment-6625594696)，#6 对共享 v0.5.4 的 B/C 复核见 [B 评论](https://github.com/LianOldMan/se-software243-group21/issues/6#issuecomment-6609251597)、[C 评论](https://github.com/LianOldMan/se-software243-group21/issues/6#issuecomment-6604657061)。**v0.5.5 四处建议已修订，但新版差异尚未由组员确认**；过程与待办见 [#6 复核记录](records/issue-6-integration-review.md)。
+- 2026-11-04 组长 A 转述：B、C 已在线下确认可以进入第二步。现已准备[跨组互评材料](records/实验一_跨组互评准备单_v0.1.md)供其他组实际核验；**尚无真实其他组的评审人、时间和结论**，不把线下组内确认算成课堂互评完成。
 - `lab1` 最终提交页面链接：**待人工核验、正式互评及修订完成后，填入全组《互评与提交记录》**；链接包含完整SHA，无需另抄哈希。
 - `lab2` / `lab3`：**待后续实验填写**。
 
