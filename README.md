@@ -37,6 +37,7 @@
 | [records/issue-6-integration-review.md](records/issue-6-integration-review.md) | #6 七项检查、真实成员证据及 AI 辅助检查边界 |
 | [records/实验一_跨组互评准备单_v0.1.md](records/实验一_跨组互评准备单_v0.1.md) | 供真正的其他小组开展正式互评的阅读入口、四类检查点与空白意见处理表；不是已发生互评的结论 |
 | [records/实验一_第25组互评意见整改记录_2026-11-06.md](records/实验一_第25组互评意见整改记录_2026-11-06.md) | 第25组 2026-11-06 实际静态评价、逐项采纳/整改位置、尚待成员与外组复核边界 |
+| [records/实验一_最终需求版本确认_2026-11-09.md](records/实验一_最终需求版本确认_2026-11-09.md) | **最终 v0.5.6**；三名成员真实姓名、学号、GitHub 账号、组长转述的 B/C/第25组线下通过与后续课程提交待办 |
 
 现已创建 [database/README.md](database/README.md)、[design/README.md](design/README.md) 两个**课程后续实验占位目录**；仅说明计划用途，数据库及软件设计内容尚未开始，不代表实验二/三已完成。
 
