@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1440" viewBox="0 0 1500 1440">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+</marker>
+</defs>
+<rect width="1500" height="1440" fill="#ffffff"/>
+<text x="50" y="48" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="24" font-weight="bold" fill="#111827" text-anchor="start">
+<tspan x="50" dy="0">UC-04 下单预留活动图 v0.2</tspan>
+</text>
+<text x="50" y="78" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">
+<tspan x="50" dy="0">对象：ReservationController / ReservationService / Repository ｜ 按统一类与操作约定 v0.3 ｜ 设计推演，未实现、未实测</tspan>
+</text>
+<line x1="50" y1="96" x2="1450" y2="96" stroke="#d1d5db" stroke-width="1"/>
+
+<rect x="390" y="570" width="620" height="700" rx="12" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="7 5"/>
+<text x="405" y="590" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="normal" fill="#4b5563" text-anchor="start">
+<tspan x="405" dy="0">«transaction» 服务事务：锁定书籍后校验，任一异常回滚</tspan>
+</text>
+
+<circle cx="700" cy="120" r="14" fill="#111827"/>
+<text x="724" y="118" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="normal" fill="#4b5563" text-anchor="start">
+<tspan x="724" dy="0">起点：买家发起预留</tspan>
+</text>
+<rect x="430" y="150" width="540" height="54" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+<text x="700.0" y="181.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#1e3a8a" text-anchor="middle">
+<tspan x="700.0" dy="0">买家提交 reserveBook(buyerId, listingId, requestToken)</tspan>
+</text>
+<line x1="700" y1="134" x2="700" y2="148" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+<polygon points="700,227.0 835.0,275 700,323.0 565.0,275" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<text x="700" y="272" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">
+<tspan x="700" dy="0">users.findById(buyerId) ≠ null</tspan>
+<tspan x="700" dy="14">∧ token 格式合法？</tspan>
+</text>
+<line x1="700" y1="204" x2="700" y2="227" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+<rect x="1080" y="240" width="340" height="62" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="1250.0" y="267.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.8" font-weight="normal" fill="#7f1d1d" text-anchor="middle">
+<tspan x="1250.0" dy="0">异常结束：INVALID_USER / INVALID_TOKEN</tspan>
+<tspan x="1250.0" dy="14">不写库，返回错误</tspan>
+</text>
+<line x1="1420" y1="271" x2="1434" y2="271" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<circle cx="1446" cy="271" r="11" fill="#ffffff" stroke="#111827" stroke-width="2"/><circle cx="1446" cy="271" r="6" fill="#111827" stroke="#111827"/>
+<line x1="835" y1="275" x2="1078" y2="271" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="850" y="260" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#b91c1c" text-anchor="start">
+<tspan x="850" dy="0">[不成立]</tspan>
+</text>
+
+<rect x="430" y="370" width="540" height="54" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+<text x="700.0" y="401.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#14532d" text-anchor="middle">
+<tspan x="700.0" dy="0">查询同买家 + token：findByBuyerAndToken</tspan>
+</text>
+<line x1="700" y1="323" x2="700" y2="368" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="342" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[成立]</tspan>
+</text>
+
+<polygon points="700,447.0 825.0,495 700,543.0 575.0,495" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<text x="700" y="499" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">
+<tspan x="700" dy="0">token 已存在？</tspan>
+</text>
+<line x1="700" y1="424" x2="700" y2="447" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="452" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[未命中]</tspan>
+</text>
+<rect x="1040" y="380" width="330" height="58" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+<text x="1205.0" y="405.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#14532d" text-anchor="middle">
+<tspan x="1205.0" dy="0">返回原订单当前状态</tspan>
+<tspan x="1205.0" dy="16">replayed=true</tspan>
+</text>
+<path d="M 1370 409 H 1465 V 1235 H 755" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<text x="1200" y="1222" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="1200" dy="0">重放返回（不再建单）</tspan>
+</text>
+<line x1="825" y1="475" x2="1038" y2="410" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="840" y="424" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.2" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="840" dy="0">[命中且同书]</tspan>
+</text>
+<rect x="1040" y="500" width="330" height="62" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="1205.0" y="527.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.8" font-weight="normal" fill="#7f1d1d" text-anchor="middle">
+<tspan x="1205.0" dy="0">拒绝 TOKEN_TARGET_MISMATCH</tspan>
+<tspan x="1205.0" dy="14">回滚，不能把 A 书订单当 B 书成功</tspan>
+</text>
+<line x1="1370" y1="531" x2="1434" y2="531" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<circle cx="1446" cy="531" r="11" fill="#ffffff" stroke="#111827" stroke-width="2"/><circle cx="1446" cy="531" r="6" fill="#111827" stroke="#111827"/>
+<line x1="825" y1="515" x2="1038" y2="530" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="840" y="532" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.2" font-weight="normal" fill="#b91c1c" text-anchor="start">
+<tspan x="840" dy="0">[命中但跨书]</tspan>
+</text>
+
+<rect x="430" y="600" width="540" height="58" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+<text x="700.0" y="633.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#14532d" text-anchor="middle">
+<tspan x="700.0" dy="0">开启事务；lockById(listingId) 锁定书籍</tspan>
+</text>
+<line x1="700" y1="543" x2="700" y2="598" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="562" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[未命中]</tspan>
+</text>
+
+<polygon points="700,677.0 825.0,725 700,773.0 575.0,725" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<text x="700" y="729" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">
+<tspan x="700" dy="0">书存在且可售？</tspan>
+</text>
+<line x1="700" y1="658" x2="700" y2="677" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="1080" y="690" width="340" height="62" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="1250.0" y="717.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.8" font-weight="normal" fill="#7f1d1d" text-anchor="middle">
+<tspan x="1250.0" dy="0">LISTING_NOT_FOUND / ALREADY_RESERVED</tspan>
+<tspan x="1250.0" dy="14">回滚，不产生新订单</tspan>
+</text>
+<line x1="1420" y1="721" x2="1434" y2="721" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<circle cx="1446" cy="721" r="11" fill="#ffffff" stroke="#111827" stroke-width="2"/><circle cx="1446" cy="721" r="6" fill="#111827" stroke="#111827"/>
+<line x1="825" y1="725" x2="1078" y2="721" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="840" y="708" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#b91c1c" text-anchor="start">
+<tspan x="840" dy="0">[否]</tspan>
+</text>
+
+<polygon points="700,804.0 815.0,850 700,896.0 585.0,850" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<text x="700" y="854" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">
+<tspan x="700" dy="0">买家 ≠ 卖家？</tspan>
+</text>
+<line x1="700" y1="773" x2="700" y2="804" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="790" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[是]</tspan>
+</text>
+<rect x="1080" y="820" width="340" height="62" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="1250.0" y="847.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.8" font-weight="normal" fill="#7f1d1d" text-anchor="middle">
+<tspan x="1250.0" dy="0">SELF_RESERVATION</tspan>
+<tspan x="1250.0" dy="14">回滚，禁止预留自己发布的书</tspan>
+</text>
+<line x1="1420" y1="851" x2="1434" y2="851" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<circle cx="1446" cy="851" r="11" fill="#ffffff" stroke="#111827" stroke-width="2"/><circle cx="1446" cy="851" r="6" fill="#111827" stroke="#111827"/>
+<line x1="815" y1="850" x2="1078" y2="851" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="830" y="835" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#b91c1c" text-anchor="start">
+<tspan x="830" dy="0">[否]</tspan>
+</text>
+
+<rect x="410" y="930" width="580" height="62" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+<text x="700.0" y="957.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#14532d" text-anchor="middle">
+<tspan x="700.0" dy="0">锁后复查 token（命中返回原单）</tspan>
+<tspan x="700.0" dy="16">未命中才 countActiveByListing(listingId)</tspan>
+</text>
+<line x1="700" y1="896" x2="700" y2="928" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="912" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[是]</tspan>
+</text>
+
+<polygon points="700,1014.0 825.0,1060 700,1106.0 575.0,1060" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<text x="700" y="1064" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">
+<tspan x="700" dy="0">已有有效订单？</tspan>
+</text>
+<line x1="700" y1="992" x2="700" y2="1014" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="1002" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[否]</tspan>
+</text>
+<rect x="1080" y="1030" width="340" height="62" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="1250.0" y="1057.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.8" font-weight="normal" fill="#7f1d1d" text-anchor="middle">
+<tspan x="1250.0" dy="0">ALREADY_RESERVED</tspan>
+<tspan x="1250.0" dy="14">回滚，同书至多一条有效订单</tspan>
+</text>
+<line x1="1420" y1="1061" x2="1434" y2="1061" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<circle cx="1446" cy="1061" r="11" fill="#ffffff" stroke="#111827" stroke-width="2"/><circle cx="1446" cy="1061" r="6" fill="#111827" stroke="#111827"/>
+<line x1="825" y1="1060" x2="1078" y2="1061" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="840" y="1045" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#b91c1c" text-anchor="start">
+<tspan x="840" dy="0">[是]</tspan>
+</text>
+
+<rect x="410" y="1150" width="580" height="70" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+<text x="700.0" y="1181.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#14532d" text-anchor="middle">
+<tspan x="700.0" dy="0">insert(order)；updateAvailability(已预留)</tspan>
+<tspan x="700.0" dy="16">commit；返回 RESERVED</tspan>
+</text>
+<line x1="700" y1="1106" x2="700" y2="1148" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="1122" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9.5" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[否]</tspan>
+</text>
+
+
+<polygon points="700,1221.0 750.0,1238 700,1255.0 650.0,1238" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.8"/>
+<text x="700" y="1242" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">
+<tspan x="700" dy="0">合并</tspan>
+</text>
+<line x1="700" y1="1220" x2="700" y2="1221" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="714" y="1214" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="9" font-weight="normal" fill="#166534" text-anchor="start">
+<tspan x="714" dy="0">[正常]</tspan>
+</text>
+<line x1="700" y1="1255" x2="700" y2="1260" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="520" y="1262" width="360" height="44" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+<text x="700.0" y="1280.0" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#14532d" text-anchor="middle">
+<tspan x="700.0" dy="0">返回 RESULT</tspan>
+<tspan x="700.0" dy="16">（RESERVED 或原订单状态）</tspan>
+</text>
+<circle cx="700" cy="1350" r="14" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+<circle cx="700" cy="1350" r="8" fill="#111827"/>
+<line x1="700" y1="1304" x2="700" y2="1336" stroke="#374151" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="724" y="1352" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="normal" fill="#4b5563" text-anchor="start">
+<tspan x="724" dy="0">正常结束</tspan>
+</text>
+
+<text x="50" y="1370" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="normal" fill="#4b5563" text-anchor="start">
+<tspan x="50" dy="0">图例：蓝=Controller/买家边界；绿=Service 事务内动作；黄=守卫判断；红=异常出口（回滚）→ ◉ 异常终止。</tspan>
+</text>
+<text x="50" y="1392" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="normal" fill="#6b7280" text-anchor="start">
+<tspan x="50" dy="0">说明：异常分支均由服务返回错误码；失败不写半完成数据，不新增 OrderStatus。</tspan>
+</text>
+<text x="50" y="1414" font-family="Microsoft YaHei, SimHei, Arial, sans-serif" font-size="10" font-weight="normal" fill="#9ca3af" text-anchor="start">
+<tspan x="50" dy="0">C · 2026-11-24 · 设计推演，未实现、未实测</tspan>
+</text>
+</svg>
