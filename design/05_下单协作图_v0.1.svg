@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000" font-family="'Microsoft YaHei','微软雅黑',sans-serif">
+<rect x="0" y="0" width="1500" height="1000" fill="#ffffff"/>
+<text x="60.0" y="40.7" font-size="19.0" fill="#1f2d3d" text-anchor="start" font-weight="500">图 05　UC-04 买家下单预留 · 协作（通信）图 v0.1</text>
+<text x="60.0" y="64.1" font-size="11.5" fill="#767676" text-anchor="start">由 图 04 同一顺序图转换：同场景、同对象、同消息编号　|　依据：design/01_统一类与操作约定_v0.3　|　设计推演，未实现、未实测</text>
+<line x1="60.0" y1="76.0" x2="1440.0" y2="76.0" stroke="#d0d0d0" stroke-width="0.9"/>
+<line x1="140.0" y1="430.0" x2="450.0" y2="430.0" stroke="#8c8c8c" stroke-width="1.0"/>
+<line x1="450.0" y1="430.0" x2="790.0" y2="430.0" stroke="#8c8c8c" stroke-width="1.0"/>
+<line x1="790.0" y1="430.0" x2="1250.0" y2="190.0" stroke="#8c8c8c" stroke-width="1.0"/>
+<line x1="790.0" y1="430.0" x2="1250.0" y2="430.0" stroke="#8c8c8c" stroke-width="1.0"/>
+<line x1="790.0" y1="430.0" x2="790.0" y2="850.0" stroke="#8c8c8c" stroke-width="1.0"/>
+<rect x="50.0" y="399.0" width="180.0" height="62.0" rx="4" fill="#f5f5f5" stroke="#666666" stroke-width="1.1"/>
+<text x="140.0" y="424.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">buyer : 买家</text>
+<text x="140.0" y="443.5" font-size="9.8" fill="#767676" text-anchor="middle">«actor»</text>
+<rect x="360.0" y="399.0" width="180.0" height="62.0" rx="4" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.1"/>
+<text x="450.0" y="424.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">ui : ReservationController</text>
+<text x="450.0" y="443.5" font-size="9.8" fill="#767676" text-anchor="middle">«boundary»</text>
+<rect x="700.0" y="399.0" width="180.0" height="62.0" rx="4" fill="#d5e8d4" stroke="#82b366" stroke-width="1.1"/>
+<text x="790.0" y="424.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">svc : ReservationService</text>
+<text x="790.0" y="443.5" font-size="9.8" fill="#767676" text-anchor="middle">«control»</text>
+<rect x="1160.0" y="159.0" width="180.0" height="62.0" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.1"/>
+<text x="1250.0" y="183.8" font-size="10.7" fill="#333333" text-anchor="middle" font-weight="500">users : UserAccountRepository</text>
+<text x="1250.0" y="203.5" font-size="9.8" fill="#767676" text-anchor="middle">«repository»</text>
+<rect x="1160.0" y="399.0" width="180.0" height="62.0" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.1"/>
+<text x="1250.0" y="423.8" font-size="10.7" fill="#333333" text-anchor="middle" font-weight="500">books : BookListingRepository</text>
+<text x="1250.0" y="443.5" font-size="9.8" fill="#767676" text-anchor="middle">«repository»</text>
+<rect x="700.0" y="819.0" width="180.0" height="62.0" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.1"/>
+<text x="790.0" y="843.2" font-size="9.1" fill="#333333" text-anchor="middle" font-weight="500">orders : ReservationOrderRepository</text>
+<text x="790.0" y="863.5" font-size="9.8" fill="#767676" text-anchor="middle">«repository»</text>
+<line x1="232.0" y1="430.0" x2="349.2" y2="430.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="356.0,430.0 348.5,432.8 348.5,427.2" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="254.0" y="404.0" width="80.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="257.0" y="415.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1</text>
+<text x="269.5" y="415.7" font-size="10.5" fill="#333333" text-anchor="start">reserveBook</text>
+<line x1="356.0" y1="470.0" x2="238.8" y2="470.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="239.3,466.7 232.0,470.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="239.3,473.3 232.0,470.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="223.0" y="480.0" width="133.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="226.0" y="491.6" font-size="10.0" fill="#5a5a5a" text-anchor="start">«return» ReservationResult</text>
+<line x1="544.0" y1="430.0" x2="689.2" y2="430.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="696.0,430.0 688.5,432.8 688.5,427.2" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="562.8" y="404.0" width="114.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="565.8" y="415.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1</text>
+<text x="587.8" y="415.7" font-size="10.5" fill="#333333" text-anchor="start">placeReservation</text>
+<line x1="696.0" y1="470.0" x2="550.8" y2="470.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="551.3,466.7 544.0,470.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="551.3,473.3 544.0,470.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="543.0" y="480.0" width="133.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="546.0" y="491.6" font-size="10.0" fill="#5a5a5a" text-anchor="start">«return» ReservationResult</text>
+<line x1="861.0" y1="393.0" x2="1173.0" y2="230.1" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1179.0,227.0 1173.7,233.0 1171.1,228.0" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="940.2" y="264.0" width="123.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="943.2" y="275.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.1</text>
+<text x="974.8" y="275.7" font-size="10.5" fill="#333333" text-anchor="start">findById(buyerId)</text>
+<line x1="1185.0" y1="241.0" x2="878.1" y2="397.9" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="877.0,394.8 872.0,401.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="880.0,400.6 872.0,401.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="1039.0" y="342.0" width="140.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="1042.0" y="353.6" font-size="10.0" fill="#5a5a5a" text-anchor="start">«return» UserAccount? | null</text>
+<line x1="896.0" y1="430.0" x2="1003.2" y2="430.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1010.0,430.0 1002.5,432.8 1002.5,427.2" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="868.2" y="402.0" width="79.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="871.2" y="413.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.3</text>
+<text x="902.8" y="413.7" font-size="10.5" fill="#333333" text-anchor="start">lockById</text>
+<line x1="1030.0" y1="430.0" x2="1149.2" y2="430.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1156.0,430.0 1148.5,432.8 1148.5,427.2" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="1024.0" y="402.0" width="129.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="1027.0" y="413.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.7</text>
+<text x="1058.5" y="413.7" font-size="10.5" fill="#333333" text-anchor="start">updateAvailability</text>
+<line x1="1156.0" y1="470.0" x2="902.8" y2="470.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="903.3,466.7 896.0,470.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="903.3,473.3 896.0,470.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="923.0" y="480.0" width="141.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="926.0" y="491.6" font-size="10.0" fill="#5a5a5a" text-anchor="start">«return» BookListing? / void</text>
+<line x1="790.0" y1="492.0" x2="790.0" y2="521.2" stroke="#333333" stroke-width="1.2"/>
+<polygon points="790.0,528.0 787.2,520.5 792.8,520.5" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="803.0" y="502.0" width="227.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="806.0" y="513.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.2</text>
+<text x="837.5" y="513.7" font-size="10.5" fill="#333333" text-anchor="start">findByBuyerAndToken(buyerId, token)</text>
+<line x1="790.0" y1="570.0" x2="790.0" y2="599.2" stroke="#333333" stroke-width="1.2"/>
+<polygon points="790.0,606.0 787.2,598.5 792.8,598.5" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="803.0" y="580.0" width="211.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="806.0" y="591.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.4</text>
+<text x="837.5" y="591.7" font-size="10.5" fill="#333333" text-anchor="start">findByBuyerAndToken（锁后复查）</text>
+<line x1="790.0" y1="648.0" x2="790.0" y2="677.2" stroke="#333333" stroke-width="1.2"/>
+<polygon points="790.0,684.0 787.2,676.5 792.8,676.5" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="803.0" y="658.0" width="191.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="806.0" y="669.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.5</text>
+<text x="837.5" y="669.7" font-size="10.5" fill="#333333" text-anchor="start">countActiveByListing(listingId)</text>
+<line x1="790.0" y1="726.0" x2="790.0" y2="755.2" stroke="#333333" stroke-width="1.2"/>
+<polygon points="790.0,762.0 787.2,754.5 792.8,754.5" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="803.0" y="736.0" width="100.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="806.0" y="747.7" font-size="10.5" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.6</text>
+<text x="837.5" y="747.7" font-size="10.5" fill="#333333" text-anchor="start">insert(order)</text>
+<line x1="790.0" y1="812.0" x2="790.0" y2="788.8" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="793.3,789.3 790.0,782.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="786.7,789.3 790.0,782.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="803.0" y="789.0" width="130.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="806.0" y="800.5" font-size="10.0" fill="#5a5a5a" text-anchor="start">«return» 订单 / 计数 / 行数</text>
+<rect x="60.0" y="700.0" width="600.0" height="190.0" rx="4" fill="#fff2cc" stroke="#d6b656" stroke-width="1.0"/>
+<text x="74.0" y="725.7" font-size="10.5" fill="#7a5b00" text-anchor="start">① 本图由 图 04 顺序图逐条转换，对象、方向、编号与顺序图完全一致（手工转换，非工具生成）。</text>
+<text x="74.0" y="745.7" font-size="10.5" fill="#7a5b00" text-anchor="start">② 协作图只展开正常路径（1.1.2 与 1.1.4 均返回 null，即新逻辑动作）；跨书 token 冲突、</text>
+<text x="74.0" y="765.7" font-size="10.5" fill="#7a5b00" text-anchor="start">　 已预留 / 自购等备选分支见图 04 的 alt 片段与 06 对照表 §4，编号 1.1.4 共用。</text>
+<text x="74.0" y="785.7" font-size="10.5" fill="#7a5b00" text-anchor="start">③ 编号约定：1 为买家到边界的首个请求，1.1 为其内部调用，1.1.n 为 Service 对 Repository</text>
+<text x="74.0" y="805.7" font-size="10.5" fill="#7a5b00" text-anchor="start">　 的调用；«return» 为返回、不参与正向编号，仅表明方向与返回类型。</text>
+<text x="74.0" y="825.7" font-size="10.5" fill="#7a5b00" text-anchor="start">④ 三条 Repository 均为持久化端口，不含业务判断；状态与事务由 svc 统一维护。</text>
+<text x="1440.0" y="987.5" font-size="10.0" fill="#9a9a9a" text-anchor="end">B 廖浩廷 · 2026-11-24 · 设计推演，未实现、未实测</text>
+</svg>

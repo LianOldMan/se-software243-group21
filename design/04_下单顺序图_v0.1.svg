@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1440" viewBox="0 0 1500 1440" font-family="'Microsoft YaHei','微软雅黑',sans-serif">
+<rect x="0" y="0" width="1500" height="1440" fill="#ffffff"/>
+<text x="60.0" y="40.7" font-size="19.0" fill="#1f2d3d" text-anchor="start" font-weight="500">图 04　UC-04 买家下单预留 · 顺序图 v0.1</text>
+<text x="60.0" y="64.1" font-size="11.5" fill="#767676" text-anchor="start">依据：design/01_统一类与操作约定_v0.3、design/03_关键操作与类职责说明_v0.3　|　设计推演，未实现、未执行 SQL、未实测</text>
+<line x1="60.0" y1="76.0" x2="1440.0" y2="76.0" stroke="#d0d0d0" stroke-width="0.9"/>
+<rect x="6.0" y="92.0" width="228.0" height="62.0" rx="4" fill="#f5f5f5" stroke="#666666" stroke-width="1.1"/>
+<text x="120.0" y="117.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">buyer : 买家</text>
+<text x="120.0" y="137.5" font-size="9.8" fill="#767676" text-anchor="middle">«actor» 外部参与者</text>
+<rect x="266.0" y="92.0" width="228.0" height="62.0" rx="4" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.1"/>
+<text x="380.0" y="117.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">ui : ReservationController</text>
+<text x="380.0" y="137.5" font-size="9.8" fill="#767676" text-anchor="middle">«boundary» 边界类</text>
+<rect x="536.0" y="92.0" width="228.0" height="62.0" rx="4" fill="#d5e8d4" stroke="#82b366" stroke-width="1.1"/>
+<text x="650.0" y="117.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">svc : ReservationService</text>
+<text x="650.0" y="137.5" font-size="9.8" fill="#767676" text-anchor="middle">«control» 控制类</text>
+<rect x="796.0" y="92.0" width="228.0" height="62.0" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.1"/>
+<text x="910.0" y="117.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">users : UserAccountRepository</text>
+<text x="910.0" y="137.5" font-size="9.8" fill="#767676" text-anchor="middle">«repository» 持久化端口</text>
+<rect x="1026.0" y="92.0" width="228.0" height="62.0" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.1"/>
+<text x="1140.0" y="117.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">books : BookListingRepository</text>
+<text x="1140.0" y="137.5" font-size="9.8" fill="#767676" text-anchor="middle">«repository» 持久化端口</text>
+<rect x="1266.0" y="92.0" width="228.0" height="62.0" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.1"/>
+<text x="1380.0" y="117.1" font-size="11.5" fill="#333333" text-anchor="middle" font-weight="500">orders : ReservationOrderRepository</text>
+<text x="1380.0" y="137.5" font-size="9.8" fill="#767676" text-anchor="middle">«repository» 持久化端口</text>
+<line x1="120.0" y1="154.0" x2="120.0" y2="1400.0" stroke="#8c8c8c" stroke-width="0.9" stroke-dasharray="5 4"/>
+<line x1="380.0" y1="154.0" x2="380.0" y2="1400.0" stroke="#8c8c8c" stroke-width="0.9" stroke-dasharray="5 4"/>
+<line x1="650.0" y1="154.0" x2="650.0" y2="1400.0" stroke="#8c8c8c" stroke-width="0.9" stroke-dasharray="5 4"/>
+<line x1="910.0" y1="154.0" x2="910.0" y2="1400.0" stroke="#8c8c8c" stroke-width="0.9" stroke-dasharray="5 4"/>
+<line x1="1140.0" y1="154.0" x2="1140.0" y2="1400.0" stroke="#8c8c8c" stroke-width="0.9" stroke-dasharray="5 4"/>
+<line x1="1380.0" y1="154.0" x2="1380.0" y2="1400.0" stroke="#8c8c8c" stroke-width="0.9" stroke-dasharray="5 4"/>
+<rect x="60.0" y="172.0" width="760.0" height="58.0" rx="4" fill="#fff2cc" stroke="#d6b656" stroke-width="1.0"/>
+<text x="74.0" y="194.7" font-size="10.5" fill="#7a5b00" text-anchor="start">前置条件（非消息编号）：服务端已通过 issueRequestToken(buyerId) 签发 36 位 UUID，</text>
+<text x="74.0" y="213.7" font-size="10.5" fill="#7a5b00" text-anchor="start">客户端在本次下单动作发起前持有 requestToken；新动作新 token，同一动作网络重试复用原 token。</text>
+<line x1="125.0" y1="258.0" x2="367.4" y2="258.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="375.0,258.0 366.6,261.2 366.6,254.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="125.0" y="237.0" width="359.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="128.0" y="247.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1</text>
+<text x="142.0" y="247.9" font-size="11.0" fill="#333333" text-anchor="start">reserveBook(buyerId, listingId, requestToken) : ReservationResult</text>
+<line x1="385.0" y1="316.0" x2="637.4" y2="316.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="645.0,316.0 636.6,319.2 636.6,312.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="385.0" y="295.0" width="393.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="388.0" y="305.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1</text>
+<text x="412.0" y="305.9" font-size="11.0" fill="#333333" text-anchor="start">placeReservation(buyerId, listingId, requestToken) : ReservationResult</text>
+<line x1="655.0" y1="374.0" x2="897.4" y2="374.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="905.0,374.0 896.6,377.2 896.6,370.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="655.0" y="353.0" width="212.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="658.0" y="363.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.1</text>
+<text x="692.0" y="363.9" font-size="11.0" fill="#333333" text-anchor="start">findById(buyerId) : UserAccount?</text>
+<line x1="905.0" y1="400.0" x2="661.8" y2="400.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="662.3,396.7 655.0,400.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="662.3,403.3 655.0,400.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="719.8" y="382.0" width="120.5" height="14.0" rx="0" fill="#ffffff"/>
+<text x="722.8" y="392.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» account | null</text>
+<line x1="655.0" y1="432.0" x2="1367.3" y2="432.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1375.0,432.0 1366.6,435.2 1366.6,428.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="655.0" y="411.0" width="388.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="658.0" y="421.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.2</text>
+<text x="692.0" y="421.9" font-size="11.0" fill="#333333" text-anchor="start">findByBuyerAndToken(buyerId, requestToken) : ReservationOrder?</text>
+<line x1="1375.0" y1="458.0" x2="661.8" y2="458.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="662.3,454.7 655.0,458.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="662.3,461.3 655.0,458.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="955.2" y="440.0" width="119.5" height="14.0" rx="0" fill="#ffffff"/>
+<text x="958.2" y="450.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» existing | null</text>
+<rect x="375.0" y="252.0" width="10.0" height="1160.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<rect x="645.0" y="300.0" width="10.0" height="1090.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<rect x="905.0" y="368.0" width="10.0" height="38.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<rect x="1375.0" y="426.0" width="10.0" height="38.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<rect x="340.0" y="486.0" width="1140.0" height="904.0" rx="0" fill="none" stroke="#9a9a9a" stroke-width="1.1" stroke-dasharray="6 4"/>
+<text x="349.0" y="502.9" font-size="11.0" fill="#555555" text-anchor="start" font-weight="500">alt</text>
+<text x="372.5" y="502.9" font-size="11.0" fill="#555555" text-anchor="start">幂等预查结果（1.1.2 返回的 existing）</text>
+<line x1="340.0" y1="524.0" x2="1480.0" y2="524.0" stroke="#9a9a9a" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="349.0" y="540.9" font-size="11.0" fill="#555555" text-anchor="start">[existing ≠ null ∧ existing.listingId = listingId]　同书 → 幂等重放，不新建订单</text>
+<line x1="645.0" y1="566.0" x2="391.8" y2="566.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="392.3,562.7 385.0,566.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="392.3,569.3 385.0,566.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="399.0" y="548.0" width="380.0" height="14.0" rx="0" fill="#ffffff"/>
+<text x="402.0" y="558.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» ReservationResult{orderId, listingId, orderStatus, replayed = true}</text>
+<line x1="340.0" y1="606.0" x2="1480.0" y2="606.0" stroke="#9a9a9a" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="349.0" y="622.9" font-size="11.0" fill="#555555" text-anchor="start">[existing ≠ null ∧ existing.listingId ≠ listingId]　跨书复用 token → 拒绝</text>
+<line x1="645.0" y1="648.0" x2="391.8" y2="648.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="392.3,644.7 385.0,648.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="392.3,651.3 385.0,648.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="399.0" y="630.0" width="219.5" height="14.0" rx="0" fill="#ffffff"/>
+<text x="402.0" y="640.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» 拒绝 TOKEN_TARGET_MISMATCH</text>
+<line x1="340.0" y1="688.0" x2="1480.0" y2="688.0" stroke="#9a9a9a" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="349.0" y="704.9" font-size="11.0" fill="#555555" text-anchor="start">[existing = null]　本次为新逻辑动作 → 进入事务创建流程</text>
+<line x1="655.0" y1="730.0" x2="1127.3" y2="730.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1135.0,730.0 1126.6,733.2 1126.6,726.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="655.0" y="709.0" width="325.0" height="15.0" rx="0" fill="#ffffff"/>
+<text x="658.0" y="719.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.3</text>
+<text x="692.0" y="719.9" font-size="11.0" fill="#333333" text-anchor="start">lockById(listingId) : BookListing?　«transaction begin»</text>
+<line x1="1135.0" y1="756.0" x2="661.8" y2="756.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="662.3,752.7 655.0,756.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="662.3,759.3 655.0,756.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="842.5" y="738.0" width="105.0" height="14.0" rx="0" fill="#ffffff"/>
+<text x="845.5" y="748.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» book | null</text>
+<rect x="1135.0" y="724.0" width="10.0" height="38.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<line x1="655.0" y1="806.0" x2="1367.3" y2="806.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1375.0,806.0 1366.6,809.2 1366.6,802.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="655.0" y="785.0" width="337.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="658.0" y="795.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.4</text>
+<text x="692.0" y="795.9" font-size="11.0" fill="#333333" text-anchor="start">findByBuyerAndToken(buyerId, requestToken)　锁后复查</text>
+<line x1="1375.0" y1="832.0" x2="661.8" y2="832.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="662.3,828.7 655.0,832.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="662.3,835.3 655.0,832.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="871.2" y="814.0" width="287.5" height="14.0" rx="0" fill="#ffffff"/>
+<text x="874.2" y="824.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» existing | null（当前读，可读取最新已提交数据）</text>
+<rect x="1375.0" y="798.0" width="10.0" height="40.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<rect x="358.0" y="862.0" width="1104.0" height="514.0" rx="0" fill="none" stroke="#9a9a9a" stroke-width="1.1" stroke-dasharray="6 4"/>
+<text x="367.0" y="878.9" font-size="11.0" fill="#555555" text-anchor="start" font-weight="500">alt</text>
+<text x="390.5" y="878.9" font-size="11.0" fill="#555555" text-anchor="start">锁后复查结果（守卫条件）</text>
+<line x1="358.0" y1="900.0" x2="1462.0" y2="900.0" stroke="#9a9a9a" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="367.0" y="916.9" font-size="11.0" fill="#555555" text-anchor="start">[existing ≠ null]（等待锁期间已被同一 token 抢先写入）→ 先处理命中，不新建订单</text>
+<line x1="645.0" y1="942.0" x2="391.8" y2="942.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="392.3,938.7 385.0,942.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="392.3,945.3 385.0,942.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="399.0" y="924.0" width="371.5" height="14.0" rx="0" fill="#ffffff"/>
+<text x="402.0" y="934.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» 同书 → ReservationResult{orderId, orderStatus, replayed = true}</text>
+<line x1="645.0" y1="970.0" x2="391.8" y2="970.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="392.3,966.7 385.0,970.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="392.3,973.3 385.0,970.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="399.0" y="952.0" width="257.0" height="14.0" rx="0" fill="#ffffff"/>
+<text x="402.0" y="962.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» 跨书 → 拒绝 TOKEN_TARGET_MISMATCH</text>
+<line x1="358.0" y1="1016.0" x2="1462.0" y2="1016.0" stroke="#9a9a9a" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="367.0" y="1032.9" font-size="11.0" fill="#555555" text-anchor="start">[existing = null ∧ (book = null ∨ 不可售 ∨ buyerId = sellerId)]　回滚，不写任何数据</text>
+<line x1="645.0" y1="1058.0" x2="391.8" y2="1058.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="392.3,1054.7 385.0,1058.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="392.3,1061.3 385.0,1058.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="417.0" y="1040.0" width="297.0" height="14.0" rx="0" fill="#ffffff"/>
+<text x="420.0" y="1050.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» 拒绝 LISTING_NOT_FOUND / SELF_RESERVATION</text>
+<line x1="358.0" y1="1098.0" x2="1462.0" y2="1098.0" stroke="#9a9a9a" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="367.0" y="1114.9" font-size="11.0" fill="#555555" text-anchor="start">[existing = null ∧ 可售 ∧ buyerId ≠ sellerId]　校验通过 → 继续创建订单</text>
+<line x1="655.0" y1="1142.0" x2="1367.3" y2="1142.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1375.0,1142.0 1366.6,1145.2 1366.6,1138.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="655.0" y="1121.0" width="222.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="658.0" y="1131.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.5</text>
+<text x="692.0" y="1131.9" font-size="11.0" fill="#333333" text-anchor="start">countActiveByListing(listingId) : Int</text>
+<line x1="1375.0" y1="1168.0" x2="661.8" y2="1168.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="662.3,1164.7 655.0,1168.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="662.3,1171.3 655.0,1168.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="906.0" y="1150.0" width="218.0" height="14.0" rx="0" fill="#ffffff"/>
+<text x="909.0" y="1160.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» 0（&gt; 0 则 ALREADY_RESERVED）</text>
+<rect x="1375.0" y="1134.0" width="10.0" height="40.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<line x1="655.0" y1="1204.0" x2="1367.3" y2="1204.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1375.0,1204.0 1366.6,1207.2 1366.6,1200.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="655.0" y="1183.0" width="204.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="658.0" y="1193.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.6</text>
+<text x="692.0" y="1193.9" font-size="11.0" fill="#333333" text-anchor="start">insert(order) : ReservationOrder</text>
+<line x1="1375.0" y1="1230.0" x2="661.8" y2="1230.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="662.3,1226.7 655.0,1230.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="662.3,1233.3 655.0,1230.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="947.8" y="1212.0" width="134.5" height="14.0" rx="0" fill="#ffffff"/>
+<text x="950.8" y="1222.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» 持久化后的 order</text>
+<rect x="1375.0" y="1196.0" width="10.0" height="40.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<line x1="655.0" y1="1266.0" x2="1127.3" y2="1266.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="1135.0,1266.0 1126.6,1269.2 1126.6,1262.8" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<rect x="655.0" y="1245.0" width="222.5" height="15.0" rx="0" fill="#ffffff"/>
+<text x="658.0" y="1255.9" font-size="11.0" fill="#1f4e79" text-anchor="start" font-weight="500">1.1.7</text>
+<text x="692.0" y="1255.9" font-size="11.0" fill="#333333" text-anchor="start">updateAvailability(listingId, 已预留)</text>
+<line x1="1135.0" y1="1292.0" x2="661.8" y2="1292.0" stroke="#8c8c8c" stroke-width="1.0" stroke-dasharray="5 4"/>
+<polyline points="662.3,1288.7 655.0,1292.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<polyline points="662.3,1295.3 655.0,1292.0" fill="none" stroke="#8c8c8c" stroke-width="1.0" stroke-linecap="round"/>
+<rect x="858.2" y="1274.0" width="73.5" height="14.0" rx="0" fill="#ffffff"/>
+<text x="861.2" y="1284.7" font-size="10.5" fill="#5a5a5a" text-anchor="start">«return» void</text>
+<rect x="1135.0" y="1258.0" width="10.0" height="40.0" rx="0" fill="#ffffff" stroke="#333333" stroke-width="1.0"/>
+<rect x="700.0" y="1310.0" width="700.0" height="52.0" rx="4" fill="#fff2cc" stroke="#d6b656" stroke-width="1.0"/>
+<text x="714.0" y="1330.7" font-size="10.5" fill="#7a5b00" text-anchor="start">«commit» 1.1.6 与 1.1.7 在同一事务内提交；任一步失败整体回滚，</text>
+<text x="714.0" y="1348.7" font-size="10.5" fill="#7a5b00" text-anchor="start">不得留下「书已预留但无订单」或反向的半完成状态。</text>
+<line x1="385.0" y1="1412.0" x2="122.7" y2="1412.0" stroke="#333333" stroke-width="1.2"/>
+<polygon points="115.0,1412.0 123.4,1408.8 123.4,1415.2" fill="#333333" stroke="#333333" stroke-width="0.6"/>
+<text x="250.0" y="1401.7" font-size="10.5" fill="#5a5a5a" text-anchor="middle">«return» 成功 ReservationResult / 失败 具体错误码</text>
+<text x="1440.0" y="1429.5" font-size="10.0" fill="#9a9a9a" text-anchor="end">B 廖浩廷 · 2026-11-24 · 设计推演，未实现、未实测</text>
+</svg>
